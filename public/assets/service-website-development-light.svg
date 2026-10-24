@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="2560" y2="1440" gradientUnits="userSpaceOnUse"><stop stop-color="#F8FAFF"/><stop offset="1" stop-color="#E9F1F8"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1700" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#F8FAFF"/><stop offset=".58" stop-color="#F8FAFF" stop-opacity=".96"/><stop offset="1" stop-color="#F8FAFF" stop-opacity="0"/></linearGradient>
+    <linearGradient id="panel" x1="1440" y1="300" x2="2270" y2="1080" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E8F1F8"/></linearGradient>
+    <linearGradient id="cyan" x1="1460" y1="390" x2="2220" y2="1000" gradientUnits="userSpaceOnUse"><stop stop-color="#68CCC8"/><stop offset="1" stop-color="#9295D8"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(660 450 -450 660 2020 660)" gradientUnits="userSpaceOnUse"><stop stop-color="#62D2CE" stop-opacity=".16"/><stop offset="1" stop-color="#62D2CE" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="1330" y="214" width="1100" height="1030" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceAlpha" stdDeviation="24"/><feOffset dy="20"/><feComponentTransfer><feFuncA type="linear" slope=".18"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h2560v1440H0z"/><path fill="url(#glow)" d="M0 0h2560v1440H0z"/>
+  <g opacity=".12" stroke="#7196AA"><path d="M1260 0v1440M1440 0v1440M1620 0v1440M1800 0v1440M1980 0v1440M2160 0v1440M2340 0v1440"/><path d="M1200 180h1360M1200 360h1360M1200 540h1360M1200 720h1360M1200 900h1360M1200 1080h1360M1200 1260h1360"/></g>
+  <g filter="url(#shadow)">
+    <rect x="1510" y="310" width="750" height="610" rx="26" fill="url(#panel)" stroke="#81CFCB" stroke-width="3"/>
+    <path d="M1512 386h746" stroke="#B5C8D3" stroke-width="2"/><circle cx="1556" cy="348" r="9" fill="#EAA7B3"/><circle cx="1588" cy="348" r="9" fill="#E9CC8D"/><circle cx="1620" cy="348" r="9" fill="#84CFC4"/>
+    <rect x="1570" y="438" width="260" height="416" rx="12" fill="#F5F8FC" stroke="#D6E2E9"/><rect x="1596" y="469" width="132" height="12" rx="6" fill="#546B7D" opacity=".65"/><rect x="1596" y="500" width="205" height="8" rx="4" fill="#B6C6D0"/><rect x="1596" y="520" width="175" height="8" rx="4" fill="#B6C6D0" opacity=".7"/><rect x="1596" y="565" width="207" height="115" rx="8" fill="#E6F0F5"/><path d="m1612 651 39-38 32 18 52-50 53 31" stroke="url(#cyan)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="1596" y="705" width="90" height="92" rx="7" fill="#DCECEF"/><rect x="1700" y="705" width="103" height="92" rx="7" fill="#E7E5F3"/>
+    <rect x="1860" y="438" width="350" height="178" rx="12" fill="#FFFFFF" stroke="#D5E2E9"/><rect x="1887" y="466" width="145" height="10" rx="5" fill="#546B7D" opacity=".65"/><path d="M1887 528h42m18 0h36m17 0h24m-137 24h79m19 0h91m-189 24h33m17 0h67m17 0h91m-208 24h61m18 0h39m18 0h68" stroke="#71BDBB" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+    <rect x="1860" y="644" width="350" height="210" rx="12" fill="#FFFFFF" stroke="#D5E2E9"/><rect x="1887" y="672" width="130" height="10" rx="5" fill="#546B7D" opacity=".65"/><path d="M1888 803h292" stroke="#D1DEE5" stroke-width="2"/><path d="M1913 787v-35m55 35v-70m55 70v-52m55 52v-98m55 98v-42" stroke="url(#cyan)" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)"><rect x="2218" y="510" width="208" height="392" rx="28" fill="#FFFFFF" stroke="#82C9CA" stroke-width="3"/><rect x="2234" y="544" width="176" height="308" rx="13" fill="#F4F8FB"/><rect x="2253" y="566" width="90" height="10" rx="5" fill="#667B8A"/><rect x="2253" y="592" width="135" height="68" rx="8" fill="#DCEEF0"/><rect x="2253" y="677" width="63" height="63" rx="7" fill="#BDE4E0"/><rect x="2325" y="677" width="63" height="63" rx="7" fill="#DDD9F0"/><rect x="2253" y="757" width="135" height="57" rx="7" fill="#E3EDF2"/></g>
+  <circle cx="2350" cy="274" r="5" fill="#78C9C4"/><circle cx="1420" cy="1020" r="4" fill="#9F91D3"/><circle cx="2260" cy="1112" r="6" fill="#75C9C5"/>
+  <path fill="url(#fade)" d="M0 0h2560v1440H0z"/>
+</svg>

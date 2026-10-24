@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="2560" y2="1440" gradientUnits="userSpaceOnUse"><stop stop-color="#091321"/><stop offset="1" stop-color="#12172B"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1660" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#091321"/><stop offset=".58" stop-color="#091321" stop-opacity=".96"/><stop offset="1" stop-color="#091321" stop-opacity="0"/></linearGradient>
+    <linearGradient id="glass" x1="1500" y1="280" x2="2260" y2="1060" gradientUnits="userSpaceOnUse"><stop stop-color="#1A3449" stop-opacity=".94"/><stop offset="1" stop-color="#111D31" stop-opacity=".95"/></linearGradient>
+    <linearGradient id="line" x1="1480" y1="420" x2="2280" y2="1000" gradientUnits="userSpaceOnUse"><stop stop-color="#44E0DE"/><stop offset="1" stop-color="#658CFF"/></linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(650 460 -460 650 2010 690)" gradientUnits="userSpaceOnUse"><stop stop-color="#258CFF" stop-opacity=".19"/><stop offset="1" stop-color="#258CFF" stop-opacity="0"/></radialGradient>
+    <filter id="blur" x="1340" y="240" width="1100" height="1020" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceAlpha" stdDeviation="26"/><feOffset dy="22"/><feComponentTransfer><feFuncA type="linear" slope=".46"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h2560v1440H0z"/><path fill="url(#glow)" d="M0 0h2560v1440H0z"/>
+  <g opacity=".34" stroke="#39627E" stroke-width="2"><path d="m1350 360 390 220 360-205M1350 780l390-200 360 205M1740 580v408M2100 375v610"/><circle cx="1350" cy="360" r="8" fill="#43CFDD"/><circle cx="1350" cy="780" r="8" fill="#43CFDD"/><circle cx="2100" cy="375" r="8" fill="#8F7CFF"/><circle cx="2100" cy="785" r="8" fill="#43CFDD"/></g>
+  <g filter="url(#blur)">
+    <path d="m1702 358 287-166 287 166v332l-287 166-287-166V358Z" fill="#172A40" stroke="#4BD4E2" stroke-opacity=".66" stroke-width="3"/>
+    <path d="m1702 358 287 166 287-166m-287 166v332" stroke="url(#line)" stroke-width="3"/>
+    <path d="m1472 554 258-148 260 149v300l-260 150-258-150V554Z" fill="url(#glass)" stroke="#457590" stroke-width="3"/>
+    <rect x="1540" y="550" width="380" height="270" rx="16" fill="#102034" stroke="#54C9DE" stroke-width="3"/><path d="M1541 612h378" stroke="#3A5A72" stroke-width="2"/><circle cx="1574" cy="582" r="7" fill="#5EE3D7"/><circle cx="1600" cy="582" r="7" fill="#6D91FF"/><rect x="1574" y="642" width="106" height="150" rx="8" fill="#1B3A50"/><path d="m1590 755 24-28 22 13 27-49" stroke="url(#line)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="1698" y="644" width="191" height="13" rx="6" fill="#B9D4E2" opacity=".68"/><rect x="1698" y="676" width="146" height="8" rx="4" fill="#54718A"/><rect x="1698" y="699" width="170" height="8" rx="4" fill="#54718A"/><rect x="1698" y="739" width="191" height="53" rx="8" fill="#1A3449"/><path d="M1720 767h144" stroke="#45D0D9" stroke-width="5" stroke-linecap="round"/>
+    <rect x="1970" y="520" width="300" height="170" rx="15" fill="#172D42" stroke="#4F9EB4" stroke-width="3"/><path d="M2000 642h35l24-38 35 19 35-52 34 24 42-42" stroke="url(#line)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="2000" y="550" width="110" height="10" rx="5" fill="#BDD6E0" opacity=".7"/>
+    <rect x="1990" y="735" width="246" height="140" rx="14" fill="#172D42" stroke="#4F9EB4" stroke-width="3"/><circle cx="2040" cy="805" r="25" stroke="#47D5D9" stroke-width="7"/><circle cx="2115" cy="805" r="25" stroke="#758BFF" stroke-width="7"/><circle cx="2190" cy="805" r="25" stroke="#A079FF" stroke-width="7"/>
+  </g>
+  <g fill="#57DDE2"><circle cx="1420" cy="984" r="6"/><circle cx="2280" cy="1010" r="5"/><circle cx="2330" cy="275" r="5"/></g><g fill="#A687FF"><circle cx="1860" cy="1030" r="5"/><circle cx="2180" cy="300" r="4"/></g>
+  <path fill="url(#fade)" d="M0 0h2560v1440H0z"/>
+</svg>

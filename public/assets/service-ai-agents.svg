@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="2560" y2="1440" gradientUnits="userSpaceOnUse"><stop stop-color="#091321"/><stop offset="1" stop-color="#11162D"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1660" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#091321"/><stop offset=".58" stop-color="#091321" stop-opacity=".96"/><stop offset="1" stop-color="#091321" stop-opacity="0"/></linearGradient>
+    <linearGradient id="core" x1="1760" y1="430" x2="2180" y2="920" gradientUnits="userSpaceOnUse"><stop stop-color="#8D7BFF"/><stop offset=".48" stop-color="#36E2E5"/><stop offset="1" stop-color="#1576C9"/></linearGradient>
+    <radialGradient id="aura" cx="0" cy="0" r="1" gradientTransform="matrix(480 0 0 480 1970 690)" gradientUnits="userSpaceOnUse"><stop stop-color="#27DDE0" stop-opacity=".3"/><stop offset="1" stop-color="#685BFF" stop-opacity="0"/></radialGradient>
+    <filter id="blur" x="1350" y="190" width="1090" height="1090" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceAlpha" stdDeviation="22"/><feOffset dy="20"/><feComponentTransfer><feFuncA type="linear" slope=".4"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h2560v1440H0z"/><path fill="url(#aura)" d="M0 0h2560v1440H0z"/>
+  <g stroke="#4ACFD8" stroke-opacity=".5" stroke-width="2"><path d="m1910 670-280-210-170-10m450 220-340 115-210 170m550-285 306-205 190-12m-496 217 302 154 185 190m-487-344 5-310 92-120m-97 430-9 342 101 156"/></g>
+  <g fill="#41DDE0"><circle cx="1460" cy="450" r="11"/><circle cx="1460" cy="960" r="10"/><circle cx="1520" cy="1105" r="8"/><circle cx="2395" cy="443" r="11"/><circle cx="2400" cy="1018" r="10"/><circle cx="2290" cy="1215" r="8"/><circle cx="2012" cy="236" r="9"/><circle cx="2000" cy="1150" r="11"/></g>
+  <g fill="#A28AFF"><circle cx="1630" cy="450" r="7"/><circle cx="1660" cy="785" r="8"/><circle cx="2218" cy="465" r="8"/><circle cx="2212" cy="824" r="7"/><circle cx="2090" cy="360" r="7"/><circle cx="2095" cy="1020" r="8"/></g>
+  <g filter="url(#blur)">
+    <circle cx="1960" cy="690" r="270" fill="#10243A" stroke="#3DDDE0" stroke-width="3"/><circle cx="1960" cy="690" r="226" stroke="url(#core)" stroke-width="7" stroke-dasharray="22 18"/><circle cx="1960" cy="690" r="174" fill="url(#core)" fill-opacity=".15" stroke="#83DDE4" stroke-opacity=".65" stroke-width="2"/>
+    <path d="M1960 554c-48 0-87 38-87 86 0 27 12 51 32 67v43h110v-43c20-16 32-40 32-67 0-48-39-86-87-86Z" fill="url(#core)" fill-opacity=".7"/><path d="M1911 779h98m-88 31h78m-62 31h46" stroke="#B3F6EF" stroke-width="10" stroke-linecap="round"/><path d="M1960 602v85m-42-42h84m-73-30 61 61m0-61-61 61" stroke="#D5FFFF" stroke-width="8" stroke-linecap="round" opacity=".88"/>
+    <circle cx="1960" cy="690" r="125" stroke="#54E4E2" stroke-opacity=".48" stroke-width="2"/>
+  </g>
+  <g fill="#A487FF" opacity=".8"><circle cx="1770" cy="360" r="4"/><circle cx="2200" cy="625" r="5"/><circle cx="1780" cy="980" r="5"/><circle cx="2130" cy="1080" r="4"/><circle cx="2320" cy="720" r="4"/></g>
+  <path fill="url(#fade)" d="M0 0h2560v1440H0z"/>
+</svg>
