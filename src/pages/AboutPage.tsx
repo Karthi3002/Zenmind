@@ -30,12 +30,12 @@ export default function AboutPage() {
     <section className="purpose-section">
       <div className="page-wrap purpose-grid">
         <article className="purpose-card">
-          <div className="purpose-card-top"><span className="eyebrow">OUR MISSION</span><span className="purpose-number">01</span></div>
+          <div className="purpose-card-top"><span className="eyebrow">OUR MISSION</span></div>
           <h2>Make progress<br />feel possible.</h2>
           <p>To help businesses grow through thoughtful design and dependable technology.</p>
         </article>
         <article className="purpose-card">
-          <div className="purpose-card-top"><span className="eyebrow">OUR VISION</span><span className="purpose-number">02</span></div>
+          <div className="purpose-card-top"><span className="eyebrow">OUR VISION</span></div>
           <h2>A partner you<br />can count on.</h2>
           <p>To be a trusted technology partner known for clarity, quality, and innovation.</p>
         </article>

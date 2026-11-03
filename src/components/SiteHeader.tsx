@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 
 import { createPortal } from 'react-dom'
 import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { WhatsAppIcon, InstagramIcon, LinkedInIcon } from './SocialIcons'
 
 type SiteHeaderProps = {
   theme: string
@@ -108,11 +109,16 @@ export default function SiteHeader({ theme, onThemeToggle }: SiteHeaderProps) {
     <Link className={navLinkClass('contact')} to="/#contact" onClick={(event) => handleSectionNavigation(event, 'contact')} aria-current={isSectionActive('contact') ? 'location' : undefined}>Contact</Link>
     <button className="theme-toggle icon-button" type="button" onClick={onThemeToggle} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`} title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}>{theme === 'light' ? <Moon size={17} /> : <Sun size={17} />}<span>Switch to {theme === 'light' ? 'dark' : 'light'} theme</span></button>
     <Link className="button button-dark nav-cta" to="/#contact" onClick={(event) => handleSectionNavigation(event, 'contact')}>Get a free quote <ArrowUpRight size={15} /></Link>
+    <div className="mobile-social-links social-links" aria-label="Social media links">
+      <a href="https://wa.me/919944270322?text=Hi%20Zenmind%20Technologies!%20I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20discuss%20a%20project.%20Could%20you%20please%20get%20back%20to%20me%3F" target="_blank" rel="noopener noreferrer" className="social-icon-btn social-whatsapp" aria-label="WhatsApp" title="WhatsApp"><WhatsAppIcon /></a>
+      <a href="https://www.instagram.com/zenmindtech?dlrf=eG16b21zNXQ5ZWxo" target="_blank" rel="noopener noreferrer" className="social-icon-btn social-instagram" aria-label="Instagram" title="Instagram"><InstagramIcon /></a>
+      <a href="https://www.linkedin.com/in/zenmind-technologies-8999b7447/" target="_blank" rel="noopener noreferrer" className="social-icon-btn social-linkedin" aria-label="LinkedIn" title="LinkedIn"><LinkedInIcon /></a>
+    </div>
     <div className="mobile-menu-footnote"><span className="status-dot" />Thoughtful work starts with a conversation.</div>
   </nav>
 
   return <header className="site-header"><div className="header-inner">
-    <Link className="wordmark" to="/" onClick={closeMenu} aria-label="ZenMind Technologies home"><img src={theme === 'dark' ? '/assets/black%20theme%20text.svg' : '/assets/white%20theme%20text.svg'} alt="" /></Link>
+    <Link className="wordmark" to="/" onClick={closeMenu} aria-label="ZenMind Technologies home"><img src={theme === 'dark' ? '/assets/white%20logo.png' : '/assets/Black%20logo.png'} alt="" /></Link>
     <button ref={menuToggleRef} className="menu-toggle icon-button" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
     {!menuOpen && navigation}
   </div>{menuOpen && createPortal(<><button className="mobile-menu-backdrop" type="button" aria-label="Close navigation menu" onClick={closeMenu} />{navigation}</>, document.body)}</header>

@@ -3,6 +3,7 @@ import { ArrowUp, MessageCircle } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import SiteFooter from './SiteFooter'
 import SiteHeader from './SiteHeader'
+import { LOADER_CONFIG, loaderController } from '../utils/loaderController'
 
 type SiteLayoutProps = {
   theme: string
@@ -12,23 +13,29 @@ type SiteLayoutProps = {
 
 export default function SiteLayout({ theme, onThemeToggle, children }: SiteLayoutProps) {
   const location = useLocation()
-  const [loadedPath, setLoadedPath] = useState<string | null>(null)
   const [showBackToTop, setShowBackToTop] = useState(false)
-  const isLoading = loadedPath !== location.pathname
 
+  // Scroll to top and optionally trigger route change loader if configured
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const timeout = window.setTimeout(() => setLoadedPath(location.pathname), prefersReducedMotion ? 120 : 2800)
-    return () => window.clearTimeout(timeout)
+    if (LOADER_CONFIG.SHOW_LOADER_ON_ROUTE_CHANGE) {
+      loaderController.triggerRouteChangeLoader()
+    }
   }, [location.pathname])
 
+  // Hash-based smooth scrolling
   useEffect(() => {
-    if (!location.hash || loadedPath !== location.pathname) return
-    const timeout = window.setTimeout(() => document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)
+    if (!location.hash) return
+    const timeout = window.setTimeout(() => {
+      document.getElementById(location.hash.slice(1))?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }, 50)
     return () => window.clearTimeout(timeout)
-  }, [loadedPath, location.hash, location.pathname])
+  }, [location.hash, location.pathname])
 
+  // Back to top button visibility check
   useEffect(() => {
     const updateBackToTopVisibility = () => {
       const scrollTop = window.scrollY
@@ -44,10 +51,31 @@ export default function SiteLayout({ theme, onThemeToggle, children }: SiteLayou
     }
   }, [])
 
-  if (isLoading) {
-    const loaderLogo = theme === 'dark' ? '/assets/black%20theme%20logo.svg' : '/assets/white%20theme%20logo.svg'
-    return <div className="page-loader" role="status" aria-label="Loading page"><div className="page-loader-mark" aria-hidden="true"><img className="page-loader-outline" src={loaderLogo} alt="" /><img className="page-loader-fill" src={loaderLogo} alt="" /></div></div>
-  }
-
-  return <><a className="skip-link" href="#main-content">Skip to content</a><SiteHeader key={location.pathname} theme={theme} onThemeToggle={onThemeToggle} /><main id="main-content">{children}</main><SiteFooter theme={theme} /><div className="floating-actions">{showBackToTop && <button className="back-to-top" type="button" aria-label="Back to top" title="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}><ArrowUp size={19} aria-hidden="true" /></button>}<Link className="floating-contact" to="/contact" aria-label="Talk with our team"><MessageCircle size={19} /><span>Let’s talk</span></Link></div></>
+  return (
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <SiteHeader key={location.pathname} theme={theme} onThemeToggle={onThemeToggle} />
+      <main id="main-content">{children}</main>
+      <SiteFooter theme={theme} />
+      <div className="floating-actions">
+        {showBackToTop && (
+          <button
+            className="back-to-top"
+            type="button"
+            aria-label="Back to top"
+            title="Back to top"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <ArrowUp size={19} aria-hidden="true" />
+          </button>
+        )}
+        <Link className="floating-contact" to="/contact" aria-label="Talk with our team">
+          <MessageCircle size={19} />
+          <span>Let’s talk</span>
+        </Link>
+      </div>
+    </>
+  )
 }

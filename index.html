@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#101e2a" />
-    <link rel="icon" type="image/svg+xml" href="/assets/black%20theme%20logo.svg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-tab.png" />
+    <link rel="icon" type="image/png" href="/assets/favicon-square.png" />
     <meta name="description" content="Zenmind Technologies builds websites, mobile apps, AI agents, and UI/UX and graphic design for businesses that want to grow. Get a free consultation." />
     <meta name="keywords" content="website development company, mobile app development, AI agent development, UI UX design, graphic design services" />
     <meta property="og:type" content="website" />
@@ -12,10 +13,173 @@
     <meta property="og:description" content="Technology that thinks clearly. Products that perform." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>Zenmind Technologies | Web, App & AI Agent Development Company</title>
+
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('zenmind-theme');
+          var theme = saved === 'light' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.classList.add('is-loading-locked');
+        } catch (e) {}
+      })();
+    </script>
+
+    <style id="critical-loader-css">
+      :root {
+        --loader-bg: #101e2a;
+        --loader-text: #8cd9e4;
+      }
+      :root[data-theme='light'] {
+        --loader-bg: #f6f9fc;
+        --loader-text: #087899;
+      }
+      :root[data-theme='dark'] {
+        --loader-bg: #101e2a;
+        --loader-text: #8cd9e4;
+      }
+
+      html.is-loading-locked,
+      body.is-loading-locked {
+        overflow: hidden !important;
+      }
+
+      .page-loader {
+        position: fixed;
+        z-index: 99999;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: var(--loader-bg);
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 400ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: opacity;
+      }
+      .page-loader.is-exiting {
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      .page-loader.is-done {
+        display: none !important;
+      }
+
+      .page-loader-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .page-loader-mark {
+        position: relative;
+        width: min(46vw, 260px);
+        aspect-ratio: 1260 / 665;
+        overflow: hidden;
+      }
+      .page-loader-mark img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      :root[data-theme='dark'] .page-loader-logo-light { display: none !important; }
+      :root[data-theme='dark'] .page-loader-logo-dark { display: block !important; }
+      :root:not([data-theme='dark']) .page-loader-logo-dark { display: none !important; }
+      :root:not([data-theme='dark']) .page-loader-logo-light { display: block !important; }
+
+      .page-loader-outline {
+        opacity: 0.22;
+        filter: grayscale(1);
+      }
+      .page-loader-fill {
+        clip-path: inset(0 100% 0 0);
+        will-change: clip-path;
+      }
+      .page-loader-fill.is-filling {
+        animation: logo-color-fill var(--loader-duration, 1500ms) linear forwards;
+      }
+
+      @keyframes logo-color-fill {
+        0%, 4% { clip-path: inset(0 100% 0 0); }
+        55% { clip-path: inset(0 48% 0 0); }
+        100% { clip-path: inset(0 0 0 0); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .page-loader-fill.is-filling {
+          clip-path: inset(0 0 0 0) !important;
+          animation: logo-reduced-pulse var(--loader-duration, 800ms) ease-in-out forwards !important;
+        }
+      }
+      @keyframes logo-reduced-pulse {
+        0% { opacity: 0.25; }
+        50% { opacity: 1; }
+        100% { opacity: 0.25; }
+      }
+
+      .page-loader-hint {
+        color: var(--loader-text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        min-height: 20px;
+        opacity: 0;
+        transition: opacity 300ms ease;
+        text-align: center;
+        max-width: 320px;
+        line-height: 1.5;
+      }
+      .page-loader-hint.is-visible {
+        opacity: 0.85;
+      }
+    </style>
   </head>
   <body>
+    <!-- Critical HTML shell loader rendered immediately on first paint -->
+    <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true" aria-label="Loading Zenmind Technologies">
+      <div class="page-loader-inner">
+        <div class="page-loader-mark" aria-hidden="true">
+          <img class="page-loader-outline page-loader-logo-dark" src="/assets/white%20favicon.png" alt="" />
+          <img class="page-loader-fill page-loader-logo-dark" src="/assets/white%20favicon.png" alt="" />
+          <img class="page-loader-outline page-loader-logo-light" src="/assets/black%20favicon.png" alt="" />
+          <img class="page-loader-fill page-loader-logo-light" src="/assets/black%20favicon.png" alt="" />
+        </div>
+        <div id="page-loader-hint" class="page-loader-hint" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        try {
+          var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+          var duration = 1500;
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            duration = 800;
+          } else if (conn) {
+            if (conn.saveData || conn.effectiveType === '2g' || conn.effectiveType === 'slow-2g') {
+              duration = 3200;
+            } else if (conn.effectiveType === '3g') {
+              duration = 2200;
+            }
+          }
+          var loader = document.getElementById('page-loader');
+          if (loader) {
+            loader.style.setProperty('--loader-duration', duration + 'ms');
+            var fills = loader.querySelectorAll('.page-loader-fill');
+            for (var i = 0; i < fills.length; i++) {
+              fills[i].classList.add('is-filling');
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
